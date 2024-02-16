@@ -15,6 +15,7 @@ std::string hexdump_to_text(const std::string & buffer)
 	std::string res = "";
 	char c;
 	int ind = 8;
+	// std::cout << "Real Size : " << real_size(buffer) << std::endl;
 	for (int i = 8; i < real_size(buffer); i += 5)
 	{
 		c = static_cast<char>(std::stoi(buffer.substr(i + 2, 2), nullptr, 16));
@@ -29,11 +30,11 @@ std::string hexdump_to_text(const std::string & buffer)
 			res += '.';
 		ind = i;
 	}
-	while (ind < buffer.size() - 6)
-	{
-		ind += 5;
-		res += "..";
-	}
+	// while (ind < buffer.size() - 6)
+	// {
+	// 	ind += 5;
+	// 	res += "..";
+	// }
 	return (res);
 }
 
